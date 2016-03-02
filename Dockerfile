@@ -12,4 +12,4 @@ RUN make install
 WORKDIR ../data
 RUN cp -r input/ HYDRO_IN
 RUN mkdir HYDRO_OUTPUT
-RUN run_hydrotrend -V
+RUN hydrotrend -V
