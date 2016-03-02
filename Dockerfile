@@ -14,3 +14,4 @@ WORKDIR ../data
 RUN cp -r input/ HYDRO_IN
 RUN mkdir HYDRO_OUTPUT
 RUN hydrotrend -V
+RUN diff HYDRO_OUTPUT/HYDROASCII.Q output/HYDROASCII.Q
