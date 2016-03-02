@@ -7,6 +7,7 @@ WORKDIR hydrotrend-master
 RUN mkdir _build 
 WORKDIR _build
 RUN cmake ./..
+RUN make
 RUN make install
 
 WORKDIR ../data
