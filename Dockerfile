@@ -1,6 +1,8 @@
 FROM lsucrc/crcbase
-         
-WORKDIR /root
+USER crcuser
+WORKDIR /model
+
+# download the source code
 RUN git clone https://github.com/kettner/hydrotrend.git
 WORKDIR hydrotrend
 RUN mkdir _build 
@@ -9,6 +11,7 @@ RUN cmake ./..
 RUN make
 RUN make install
 
+# running a testing case
 WORKDIR ../data
 RUN cp -r input/ HYDRO_IN
 RUN mkdir HYDRO_OUTPUT
