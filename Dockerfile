@@ -1,9 +1,8 @@
 FROM lsucrc/crcbase
          
 WORKDIR /root
-RUN wget https://github.com/kettner/hydrotrend/archive/master.zip 
-RUN unzip master.zip 
-WORKDIR hydrotrend-master
+RUN git clone https://github.com/kettner/hydrotrend.git
+WORKDIR hydrotrend
 RUN mkdir _build 
 WORKDIR _build
 RUN cmake ./..
